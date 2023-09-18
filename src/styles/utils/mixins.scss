@@ -1,0 +1,85 @@
+@mixin onTablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin contentPaddingInline() {
+  padding-inline: 20px;
+
+  @include onTablet {
+    padding-inline: 72px;
+  }
+
+  @include onDesktop {
+    padding-inline: 120px;
+    margin-inline: auto;
+    max-width: 1020px;
+  }
+}
+
+.container {
+  @include contentPaddingInline;
+}
+
+@mixin hover($property, $toValue) {
+  transition: #{$property} 0.3s;
+
+  &:hover {
+    #{$property}: #{$toValue};
+  }
+}
+
+@mixin pageGrid {
+  --columns: 2;
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  @include onTablet {
+    --columns: 6;
+    column-gap: 24px;
+  }
+
+  @include onDesktop {
+    --columns: 12;
+  }
+}
+
+@mixin inputStyles {
+  font-family: "Space Mono", Arial, Helvetica, sans-serif;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  max-height: 48px;
+
+  border: 1px solid transparent;
+  background: #f8f8fa;
+  border-radius: 8px;
+
+  &:hover {
+    border-color: #d5d7de;
+  }
+}
+
+@mixin pressedButton {
+  background-color: #111;
+  color: #fff;
+}
+
+@mixin animationProp {
+  transition: background-color,
+    border-color,
+    color,
+    transform,
+    0.3s ease-in 0.1s;
+}
+
+@mixin hoveredPicture {
+  transform: translateY(-10px) scale(1.1);
+}

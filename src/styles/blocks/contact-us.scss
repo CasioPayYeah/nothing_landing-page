@@ -1,0 +1,113 @@
+.contact-us {
+  font-family: "Space Mono", Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+
+  &__address-link {
+    cursor: pointer;
+  }
+
+  &__wrapper {
+    @include onDesktop {
+      display: flex;
+      flex-direction: row;
+      gap: 110px;
+    }
+  }
+
+  &__contact {
+    align-content: flex-start;
+  }
+
+  &__block-info:not(:first-child) {
+    margin-top: 24px;
+  }
+
+  &__block-info:first-child {
+    margin-top: 48px;
+
+    @include onDesktop {
+      margin-top: 0;
+    }
+  }
+
+  &__sub-title {
+    font-size: 14px;
+    line-height: 140%;
+    color: #9393a3;
+    font-weight: 400;
+    padding-bottom: 8px;
+  }
+
+  &__contact-info {
+    font-size: 16px;
+    line-height: 140%;
+
+    color: #191919;
+
+    &:hover {
+      color: #9393a3;
+    }
+  }
+
+  &__content {
+    @include onDesktop {
+      width: 400px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+
+    font-family: "Space Mono", Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+  }
+
+  &__input--name {
+    @include inputStyles;
+  }
+
+  &__input--email {
+    @include inputStyles;
+  }
+
+  &__area {
+    @include inputStyles;
+
+    resize: none;
+    max-height: 148px;
+  }
+
+  &__button {
+    @include inputStyles;
+
+    border: 2px solid #f0f1f4;
+    max-height: 56px;
+
+    font-family: "Space Grotesk", Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 169%;
+    text-align: center;
+    cursor: pointer;
+
+    color: #292929;
+
+    @include animationProp;
+
+    &:hover {
+      background-color: #292929;
+      color: #fff;
+      border-color: #292929;
+    }
+
+    &:active {
+      @include pressedButton;
+    }
+  }
+}
+
+

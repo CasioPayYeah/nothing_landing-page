@@ -1,0 +1,51 @@
+.icon {
+  display: block;
+  height: 24px;
+  width: 24px;
+  background-image: url(../images/icons/icon-menu.svg);
+  background-size: cover;
+
+  @include hover(transform, scale(1.2));
+
+  @include onTablet {
+    height: 32px;
+    width: 32px;
+  }
+
+  &--phone {
+    position: relative;
+    background-image: url(../images/icons/icon-phone.svg);
+
+    @include onDesktop {
+      &:hover {
+        &::before {
+          position: absolute;
+          content: "+1 234 5555-55-55";
+          width: 160px;
+
+          font-family: "Inter", Arial, Helvetica, sans-serif;
+          font-weight: 700;
+          font-size: 12px;
+          line-height: 16px;
+
+          top: 8px;
+          letter-spacing: 2px;
+          right: 32px;
+          color: #292929;
+        }
+      }
+    }
+  }
+
+  &--menu {
+    background-image: url(../images/icons/icon-menu.svg);
+
+    &:hover {
+      background-image: url(../images/icons/icon-menu-hover.svg);
+    }
+  }
+
+  &--close {
+    background-image: url(../images/icons/icon-close.svg);
+  }
+}
