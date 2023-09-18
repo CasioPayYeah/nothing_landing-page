@@ -1,1 +1,1 @@
-[# landing_page](https://casiopayyeah.github.io/nothing_landing-page/)https://casiopayyeah.github.io/nothing_landing-page/
+[# LINK TO LANDING PAGE](https://casiopayyeah.github.io/nothing_landing-page/)
